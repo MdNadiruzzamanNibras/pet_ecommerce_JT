@@ -1,9 +1,10 @@
+import MainLayout from "./layout/MainLayout";
 
 
 const App = () => {
   return (
     <div>
-      <h1>This is a home page</h1>
+     <MainLayout/>
     </div>
   );
 };
