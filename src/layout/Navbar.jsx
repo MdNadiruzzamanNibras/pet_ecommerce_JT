@@ -69,6 +69,11 @@ const Navbar = () => {
                                 Home
                             </li>
                             </Link>
+                            <Link to="/favourite">
+                             <li className="text-gray-600 hover:text-blue-600">
+                                Favourite
+                            </li>
+                            </Link>
                              <li className="text-gray-600 hover:text-blue-600">{user ? <button  onClick={logout}  >Log out</button>
 :<Link to="/login">Login</Link>}</li>
                             

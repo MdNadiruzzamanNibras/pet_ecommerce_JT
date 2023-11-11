@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
-import { useCreateUserWithEmailAndPassword, } from 'react-firebase-hooks/auth';
+import {  useCreateUserWithEmailAndPassword, } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.config";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [
@@ -15,7 +16,10 @@ const Login = () => {
   
     formState: { errors },
   } = useForm()
-
+const navigate = useNavigate()
+  const location = useLocation()
+  
+    let from = location.state?.from?.pathname || "/";
   const onSubmit = (data) => {
    
     try {
@@ -24,6 +28,9 @@ const Login = () => {
     } catch (error) {
       console.log(error);
     }
+  }
+  if(user){
+      navigate(from, { replace: true });
     }
     if(loading){
       return <p>Loading...</p>
@@ -97,7 +104,9 @@ const Login = () => {
             <div className="flex justify-center my-6">
               <input className="px-7 py-2 bg-black text-white border border-black text-xl hover:text-black hover:bg-white cursor-pointer" type="submit" value="Login" />
       </div>
-    </form>
+            </form>
+            <p><small>New to Pet Home  <Link  className='text-blue-700' to='/signup'>Create Account</Link></small></p>
+
       </div>
      </div>
     </div>

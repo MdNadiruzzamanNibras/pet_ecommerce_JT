@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Fluffy",
+      "category": "Cat",
+      "price": 50,
+      "image":"https://i.ibb.co/gwg4V6V/persian-cat.jpg",
+      "description": "A playful and affectionate long-haired Persian cat."
+     
+    },
+    {
+      "name": "Max",
+      "category": "Dog",
+      "price": 100,
+      "image":"https://i.ibb.co/dPPH9Xx/Golden-Retriever.jpg",
+      "description": "A friendly and energetic Golden Retriever, great with families."
+    },
+    {
+      "name": "Whiskers",
+      "category": "Cat",
+      "price": 40,
+      "image":"https://i.ibb.co/Wk4tWCd/Tabby-cat.jpg",
+      "description": "A mischievous and curious short-haired Tabby cat."
+    },
+    {
+      "name": "Buddy",
+      "category": "Dog",
+      "price": 80,
+      "image":"https://i.ibb.co/xFXHP4k/German-Shepherd.jpg",
+      "description": "A loyal and intelligent German Shepherd, excellent for training."
+    },
+    {
+      "name": "Mittens",
+      "category": "Cat",
+      "price": 45,
+      "image":"https://i.ibb.co/b5vVk3k/Ragdoll-cat.jpg",
+      "description": "A calm and cuddly Ragdoll cat, enjoys being held."
+    },
+    {
+      "name": "Bailey",
+      "category": "Dog",
+      "price": 120,
+      "image":"https://i.ibb.co/4gRmmkv/small-sized-Beagle.jpg",
+      "description": "An affectionate and small-sized Beagle, perfect for companionship."
+    },
+    {
+      "name": "Shadow",
+      "category": "Cat",
+      "price": 55,
+      "image":"https://i.ibb.co/nRtnTKS/Russian-Blue.jpg",
+      "description": "A mysterious and independent Russian Blue cat."
+    },
+    {
+      "name": "Luna",
+      "category": "Cat",
+      "price": 60,
+      "image":"https://i.ibb.co/HPBfM2R/vocal-Siamese.jpg",
+      "description": "An elegant and vocal Siamese cat."
+    },
+    {
+      "name": "Rocky",
+      "category": "Dog",
+      "price": 90,
+      "image":"https://i.ibb.co/GVsjksH/Doberman.jpg",
+      "description": "A strong and protective Doberman, great for security."
+    }
+  ]
