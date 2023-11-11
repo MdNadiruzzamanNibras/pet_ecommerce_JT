@@ -1,15 +1,23 @@
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../firebase.config";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
-      const [navbar, setNavbar] = useState(false);
+    const [navbar, setNavbar] = useState(false);
+    const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+       
+      };
     return (
        <nav className="w-full bg-white shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+            <div className="justify-between px-4 mx-auto  md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         
-                            <h2 className="text-2xl font-bold">LOGO</h2>
+                            <h2 className="text-2xl font-bold">Pet Home</h2>
                         
                         <div className="md:hidden">
                             <button
@@ -55,15 +63,14 @@ const Navbar = () => {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="items-center justify-center lg:mr-64 space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <Link to="/">
                              <li className="text-gray-600 hover:text-blue-600">
                                 Home
                             </li>
                             </Link>
-                            <li className="text-gray-600 hover:text-blue-600">
-                               Login
-                            </li>
+                             <li className="text-gray-600 hover:text-blue-600">{user ? <button  onClick={logout}  >Log out</button>
+:<Link to="/login">Login</Link>}</li>
                             
                             
                         </ul>
