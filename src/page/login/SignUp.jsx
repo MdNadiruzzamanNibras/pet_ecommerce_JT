@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useCreateUserWithEmailAndPassword, } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.config";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [
       createUserWithEmailAndPassword,
@@ -14,7 +15,10 @@ const SignUp = () => {
   
     formState: { errors },
   } = useForm()
-
+const navigate = useNavigate()
+  const location = useLocation()
+  
+    let from = location.state?.from?.pathname || "/";
   const onSubmit = (data) => {
    
     try {
@@ -25,6 +29,9 @@ const SignUp = () => {
     }
   }
   console.log(user, "user");
+   if(user){
+      navigate(from, { replace: true });
+    }
    if(loading){
       return <p>Loading...</p>
     }
@@ -117,7 +124,8 @@ const SignUp = () => {
               <input className="px-7 py-2 bg-black text-white border border-black text-xl hover:text-black hover:bg-white cursor-pointer" type="submit" value="Sign up" />
             </div>
             
-    </form>
+          </form>
+          <p><small> Already signed up in Pet Home <Link  className='text-blue-700' to='/signup'>Login page</Link></small></p>
       </div>
      </div>
     </div>

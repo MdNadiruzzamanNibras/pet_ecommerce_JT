@@ -22,7 +22,7 @@ const Detail = () => {
         <div className="container mx-auto">
             <div className="flex justify-center items-center h-screen">
                 
-                        <a href="#" className="block">
+                        <div className="block">
   <img
     alt="Signage"
     src={data?.image}
@@ -32,12 +32,14 @@ const Detail = () => {
   <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
     <strong className="font-medium">{data?.name}</strong>
 
-    <span className="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
+    <span className=" sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
 
-                                <p className="mt-0.5 opacity-50 sm:mt-0">${data?.price}</p> <button onClick={()=>handleAdd()}>add to favourite</button> <br />
-                                <p>{data?.description}</p>
-  </div>
-</a>
+                        <p className="mt-0.5 opacity-50 sm:mt-0">${data?.price}</p> <button onClick={() => handleAdd()} className="text-xs border-black border rounded-full px-2 py-1 bg-black text-white 
+                                hover:bg-white hover:text-black cursor-pointer">add to favourite</button> <br />
+                               
+                    </div>
+                     <p>{data?.description}</p>
+</div>
                    
                 
             </div>
